@@ -1,24 +1,25 @@
 {
-  "name": "msg_exchange",
-  "description": "获取信息",
-  "version": "1.0",    
-  "icons":{"48": "msg.png"},
-  "permissions": [
-    "activeTab","tabs"
-  ],
-  "browser_action": {
-    "default_title": "聊天",
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["http://*/*","https://*/*"],      
-      "js": ["jquery-1.10.1.js","content.js"]
-    }
-  ], 
-  "background": {
-  	"page":"data_container.html",
-    "persistent": true
-  },   
-  "manifest_version": 2
+	"name": "msg_exchange",
+	"description": "获取信息",
+	"version": "1.0",
+	"icons": {
+		"48": "msg.png"
+	},
+	"permissions": ["activeTab", "tabs"],
+	"browser_action": {
+		"default_title": "聊天",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["jquery-1.10.1.js", "layer/layer.js", "content.js"],
+			"css": ["layer/skin/layer.css", "layer/skin/layer.ext.css"]
+		}
+	],
+	"background": {
+		"page": "data_container.html",
+		"persistent": true
+	},
+	"manifest_version": 2
 }
